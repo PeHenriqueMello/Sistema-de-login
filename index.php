@@ -1,4 +1,6 @@
 <?php
+
+
 //verificar o que foi passado no formulario
 
 if(isset($_POST['submit']) ){
@@ -8,6 +10,7 @@ if(isset($_POST['submit']) ){
 $sanitized_email= filter_var($email, FILTER_SANITIZE_EMAIL);
 $sanitized_senha=filter_var($senha,FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
+//só irá prosseguir se for tudo preenchido
 if(!empty($sanitized_email) && !empty($sanitized_senha)){
     header('Location: area_logado.php');
 }else{
